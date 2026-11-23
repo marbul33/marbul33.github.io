@@ -1,0 +1,14 @@
+/*-- scss:defaults --*/
+$navbar-bg: #1b365d;
+$navbar-fg: #ffffff;
+$navbar-hl: #93c5fd;
+
+$link-color: #1d4ed8;       // Color del enlace
+$link-hover-color: #1e3a8a; // Color al pasar el ratón por encima
+$link-decoration: none;     
+$link-hover-decoration: underline; 
+
+/*-- scss:rules --*/
+.navbar {
+  border-bottom: 1px solid #e5e7eb;
+}

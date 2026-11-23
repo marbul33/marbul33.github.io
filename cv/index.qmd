@@ -1,0 +1,26 @@
+---
+title: ""
+date: today
+date-format: "MMMM D, YYYY"
+toc: false
+header-includes: |
+  <style>#title-block-header { display: none; }</style>
+---
+
+::: {.cv-meta}
+CV LAST UPDATED  
+[{{< meta date >}}]{.cv-date}
+:::
+
+<div class="cv-download-wrap">
+  <a href="CV_EN_Bulat_Simon_Marius.pdf" class="btn btn-cv" download="CV_EN_Bulat_Simon_Marius.pdf">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+      <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1m-1 4v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 11.293V7.5a.5.5 0 0 1 1 0"/>
+    </svg>
+    Download CV
+  </a>
+</div>
+
+::: {.cv-pdf-container}
+<iframe src="CV_EN_Bulat_Simon_Marius.pdf#view=FitH" title="Curriculum Vitae"></iframe>
+:::

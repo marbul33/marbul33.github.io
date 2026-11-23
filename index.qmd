@@ -1,0 +1,19 @@
+---
+image: ./img/profile.png
+about:
+  template: trestles
+  image-width: 18em
+---
+
+::: {.about-banner}
+Hello!
+:::
+
+I'm **Marius Bulat Simon**. On this website, you can explore my background and check out my personal project portfolio.
+
+I specialize in financial data analysis, turning complex business needs into pragmatic, working solutions.
+
+Although I mainly code in [**Python**](https://www.python.org/), I also use [**R**](https://www.r-project.org/) and the [**tidyverse**](https://tidyverse.org/), as it was the first programming language I learned. For example, this very website you're looking at was built in R and [**Quarto**](https://quarto.org/).
+
+
+
