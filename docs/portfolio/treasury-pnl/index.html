@@ -67,7 +67,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../../styles/style.css">
 </head>
 
-<body class="nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed fullcontent quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -286,42 +286,40 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-layout-custom page-navbar" tabindex="-1">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
 <!-- main -->
-<main class="content column-page" id="quarto-document-content" tabindex="-1">
-
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Multi-Currency Treasury Reconciliation &amp; P&amp;L</h1>
-</div>
 
 
 
-<div class="quarto-title-meta column-page">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
 
 
 <iframe id="proj" src="https://marbul33.github.io/treasury-pnl-reconciliation/" title="Treasury P&amp;L dashboard" loading="lazy">
 </iframe>
 <style>
-#proj { width: 100%; border: 0; min-height: 600px; height: calc(100vh - 160px); }
+main.content, #quarto-content {
+  padding: 0 !important;
+  margin: 0 !important;
+  max-width: 100% !important;
+}
+
+#proj {
+  display: block;
+  width: 100vw;
+  max-width: 100%;
+  border: 0;
+  min-height: 850px;
+  height: calc(100vh - 60px); 
+}
 </style>
 <script>
 const f = document.getElementById("proj");
 const fit = () => {
-  try { f.style.height = f.contentDocument.documentElement.scrollHeight + "px"; } catch (e) {}
+  try {
+    const h = f.contentDocument.documentElement.scrollHeight;
+    if (h > 0) f.style.height = h + "px";
+  } catch (e) {}
 };
 f.addEventListener("load", () => {
   fit();
@@ -331,7 +329,7 @@ f.addEventListener("load", () => {
 
 
 
-</main> <!-- /main -->
+
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
