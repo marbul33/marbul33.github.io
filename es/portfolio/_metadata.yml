@@ -1,0 +1,5 @@
+freeze: auto
+execute:
+  echo: false
+  warning: false
+  message: false
