@@ -1,19 +1,36 @@
 ---
-title: "Multi-Currency Treasury Reconciliation & P&L"
-page-layout: full
+pagetitle: "Multi-Currency Treasury Reconciliation & P&L"
+page-layout: custom
 ---
 
 <iframe id="proj" src="https://marbul33.github.io/treasury-pnl-reconciliation/"
         title="Treasury P&L dashboard" loading="lazy"></iframe>
 
 <style>
-#proj { width: 100%; border: 0; min-height: 600px; height: calc(100vh - 160px); }
+/* Elimina márgenes/rellenos del contenedor de Quarto y ajusta la altura */
+main.content, #quarto-content {
+  padding: 0 !important;
+  margin: 0 !important;
+  max-width: 100% !important;
+}
+
+#proj {
+  display: block;
+  width: 100vw;
+  max-width: 100%;
+  border: 0;
+  min-height: 850px;
+  height: calc(100vh - 60px); /* Resta solo la altura del navbar superior */
+}
 </style>
 
 <script>
 const f = document.getElementById("proj");
 const fit = () => {
-  try { f.style.height = f.contentDocument.documentElement.scrollHeight + "px"; } catch (e) {}
+  try {
+    const h = f.contentDocument.documentElement.scrollHeight;
+    if (h > 0) f.style.height = h + "px";
+  } catch (e) {}
 };
 f.addEventListener("load", () => {
   fit();
