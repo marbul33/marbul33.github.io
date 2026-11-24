@@ -1,0 +1,22 @@
+---
+title: "Multi-Currency Treasury Reconciliation & P&L"
+page-layout: full
+---
+
+<iframe id="proj" src="https://marbul33.github.io/treasury-pnl-reconciliation/"
+        title="Treasury P&L dashboard" loading="lazy"></iframe>
+
+<style>
+#proj { width: 100%; border: 0; min-height: 600px; height: calc(100vh - 160px); }
+</style>
+
+<script>
+const f = document.getElementById("proj");
+const fit = () => {
+  try { f.style.height = f.contentDocument.documentElement.scrollHeight + "px"; } catch (e) {}
+};
+f.addEventListener("load", () => {
+  fit();
+  try { new ResizeObserver(fit).observe(f.contentDocument.body); } catch (e) {}
+});
+</script>

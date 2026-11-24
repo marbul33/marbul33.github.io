@@ -4,7 +4,7 @@
     "href": "es/cv/index.html",
     "title": "Marius Bulat Simon",
     "section": "",
-    "text": "CV: ÚLTIMA ACTUALIZACIÓN\nNovember 19, 2026\n\n\n    Download CV"
+    "text": "CV: ÚLTIMA ACTUALIZACIÓN\nNovember 23, 2026\n\n\n    Download CV"
   },
   {
     "objectID": "es/index.html",
@@ -25,6 +25,27 @@
     "href": "cv/index.html",
     "title": "Marius Bulat Simon",
     "section": "",
-    "text": "CV LAST UPDATED\nNovember 20, 2026\n\n\n    Download CV"
+    "text": "CV LAST UPDATED\nNovember 23, 2026\n\n\n    Download CV"
+  },
+  {
+    "objectID": "portfolio/index.html",
+    "href": "portfolio/index.html",
+    "title": "Portfolio",
+    "section": "",
+    "text": "Multi-Currency Treasury Reconciliation & P&L"
+  },
+  {
+    "objectID": "portfolio/portfolio.html",
+    "href": "portfolio/portfolio.html",
+    "title": "Portfolio",
+    "section": "",
+    "text": "No matching items"
+  },
+  {
+    "objectID": "portfolio/treasury-pnl/index.html",
+    "href": "portfolio/treasury-pnl/index.html",
+    "title": "\nMulti-Currency Treasury Reconciliation & P&L Report\n",
+    "section": "",
+    "text": "NordicDesk Labs S.L. · 6-Month Executive Close (Oct 2025 – Mar 2026)\n\n\n\n1. Reconciled Dashboard (After)2. Raw Data (Before)\n\n\n\n\n\n\n  \n    Net Revenue (Ex-VAT)\n    €343,998\n    6M EBITDA: -€41,952 (-12.2% margin)\n  \n  \n    Payment Fees & FX Friction\n    €5,750\n    1.67% of Net Revenue (Stripe + Bank FX spread)\n  \n  \n    Discrepancies Flagged\n    €16,090\n    15 items · Cash: €1,879 | ERP/AR: €14,211\n  \n  \n    Auto-Reconciliation Rate\n    98.4%\n    Ending Cash (Mar 31): €7,247\n  \n\n\n\n\n\n\nTotals\n\nCost structure by month (accrual basis, ex-VAT)\n\n\n\n\n\n                            \n                                            \n\n\n\n\n\n\n                            \n                                            \n\n\n\n\n\nCash runway under revenue stress\n\n\n                            \n                                            \n\n\n\n\n\nAccounting exceptions\n\n\n\n\n\n\nSeverity\nDate\nAnomaly\nReference\nOriginal\nImpact (EUR)\nRecommended action\n\n\n\n\nMEDIUM\n2026-01-14\nOVERDUE_B2B_INVOICE\nB2B-2025-0013\n4,961.00 EUR\n€4,961.00\nTrigger accounts receivable follow-up with client (Atelier Nordique SAS).\n\n\nMEDIUM\n2025-12-23\nOVERDUE_B2B_INVOICE\nB2B-2025-0010\n2,753.58 GBP\n€3,200.00\nTrigger accounts receivable follow-up with client (Thames Ergonomics Ltd).\n\n\nMEDIUM\n2025-12-08\nOVERDUE_B2B_INVOICE\nB2B-2025-0007\n2,904.00 EUR\n€2,904.00\nTrigger accounts receivable follow-up with client (Krono Office GmbH).\n\n\nHIGH\n2025-10-27\nDUPLICATE_ERP_INVOICE\nINV-2025-0084-DUP\n664.29 EUR\n€664.29\nIssue credit note / void duplicate invoice in ERP to avoid overpaying VAT.\n\n\nMEDIUM\n2026-01-28\nUNCLASSIFIED_BANK_OUTFLOW\nBNK-00180\n640.00 USD\n€582.63\nRequest missing vendor receipt or dispute duplicate charge (WIRE DEBIT UNRECOGNIZED VENDOR #8814).\n\n\nHIGH\n2025-12-04\nDUPLICATE_ERP_INVOICE\nINV-2025-0254-DUP\n594.16 USD\n€549.00\nIssue credit note / void duplicate invoice in ERP to avoid overpaying VAT.\n\n\nHIGH\n2026-01-16\nDUPLICATE_ERP_INVOICE\nINV-2026-0049-DUP\n610.57 USD\n€549.00\nIssue credit note / void duplicate invoice in ERP to avoid overpaying VAT.\n\n\nHIGH\n2025-12-26\nMISSING_ERP_INVOICE\nch_000371\n482.79 EUR\n€482.79\nIssue missing customer invoice in ERP to stay tax-compliant.\n\n\nHIGH\n2025-11-22\nMISSING_ERP_INVOICE\nch_000198\n482.79 EUR\n€482.79\nIssue missing customer invoice in ERP to stay tax-compliant.\n\n\nCRITICAL\n2026-01-08\nUNMATCHED_PAYOUT_DELTA\npo_usd_20260106_13\n485.00 USD\n€439.15\nInvestigate withheld funds or unrecorded chargeback in Stripe dashboard.\n\n\nCRITICAL\n2025-11-22\nUNMATCHED_PAYOUT_DELTA\npo_eur_20251120_16\n340.00 EUR\n€340.00\nInvestigate withheld funds or unrecorded chargeback in Stripe dashboard.\n\n\nMEDIUM\n2025-11-19\nUNCLASSIFIED_BANK_OUTFLOW\nBNK-00179\n299.00 EUR\n€299.00\nRequest missing vendor receipt or dispute duplicate charge (CARD DEBIT CLOUDSVC PRO DUPLICATE CHARGE).\n\n\nHIGH\n2025-10-20\nMISSING_ERP_INVOICE\nch_000059\n228.69 EUR\n€228.69\nIssue missing customer invoice in ERP to stay tax-compliant.\n\n\nMEDIUM\n2026-03-11\nUNCLASSIFIED_BANK_OUTFLOW\nBNK-00181\n185.00 GBP\n€218.32\nRequest missing vendor receipt or dispute duplicate charge (FPS DEBIT REF MISSING - REVIEW REQUIRED).\n\n\nHIGH\n2026-02-23\nMISSING_ERP_INVOICE\nch_000537\n160.42 GBP\n€189.00\nIssue missing customer invoice in ERP to stay tax-compliant.\n\n\n\n\n\n\n\n\n\n\n\n\nNo CSV files found in the data directory."
   }
 ]
