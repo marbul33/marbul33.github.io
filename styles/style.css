@@ -1,0 +1,247 @@
+/* ==========================================================================
+   1. INTERRUPTOR DE TEMA (SOL / LUNA)
+   ========================================================================== */
+.navbar .quarto-color-scheme-toggle {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.navbar .quarto-color-scheme-toggle .bi {
+  transform: scale(1.45);
+  transform-origin: center;
+  display: inline-flex;
+  align-items: center;
+}
+
+.navbar .quarto-color-scheme-toggle::before {
+  font-family: "bootstrap-icons";
+  content: "\F5A1"; /* Sol */
+  font-size: 1.25rem;
+  line-height: 1;
+  color: #ffd43b;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+body.quarto-dark .navbar .quarto-color-scheme-toggle::before {
+  content: "\F495"; /* Luna */
+  transform: rotate(-10deg);
+}
+
+/* ==========================================================================
+   2. SELECTOR DE IDIOMA (BANDERA CIRCULAR + CORTINILLA)
+   ========================================================================== */
+.lang-switcher {
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  overflow: hidden;
+  vertical-align: middle;
+  box-shadow: 0 0 0 1.5px rgba(255, 255, 255, 0.3);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.lang-switcher:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.7);
+}
+
+.lang-switcher .flag-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: clip-path 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Estado por defecto (Inglés visible, España oculta) */
+.lang-switcher .flag-en { z-index: 1; }
+.lang-switcher .flag-es {
+  z-index: 2;
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+}
+.lang-switcher:hover .flag-es {
+  clip-path: polygon(55% 0, 100% 0, 100% 100%, 35% 100%);
+}
+
+/* Estado Español (.is-es) */
+.lang-switcher.is-es .flag-es {
+  z-index: 1;
+  clip-path: none;
+}
+.lang-switcher.is-es .flag-en {
+  z-index: 2;
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+}
+.lang-switcher.is-es:hover .flag-en {
+  clip-path: polygon(55% 0, 100% 0, 100% 100%, 35% 100%);
+}
+
+/* Cierre completo de la animación al hacer clic */
+.lang-switcher.is-switching .flag-es,
+.lang-switcher.is-es.is-switching .flag-en {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%) !important;
+}
+.lang-switcher.is-switching {
+  transform: scale(0.95);
+}
+
+/* ==========================================================================
+   3. ORDEN Y SEPARACIÓN DEL NAVBAR (ESCRITORIO)
+   ========================================================================== */
+@media (min-width: 992px) {
+  .navbar #navbarCollapse {
+    display: contents !important;
+  }
+
+  .navbar .navbar-brand-container { order: 1; }
+
+  .navbar .navbar-nav.me-auto {
+    order: 2;
+    margin-right: auto !important;
+  }
+
+  .navbar .quarto-navbar-tools {
+    order: 3;
+    margin-left: 0 !important;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar .navbar-nav:not(.me-auto) {
+    order: 4;
+    margin-left: 0 !important;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Separador vertical entre [tema + idioma] y [GitHub + LinkedIn + futuros enlaces] */
+  .navbar .navbar-nav .nav-item:has(.lang-switcher) {
+    margin-right: 14px;
+    padding-right: 14px;
+    border-right: 1px solid rgba(255, 255, 255, 0.22);
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* ==========================================================================
+   4. TIPOGRAFÍA Y DISEÑO DE PÁGINA (ABOUT / TEXTOS)
+   ========================================================================== */
+main p, main li {
+  text-align: justify;
+  hyphens: auto;
+}
+
+div.quarto-about-trestles .about-contents {
+  border-left: none !important;
+}
+
+/* Alinea la parte superior de la foto y del bloque de texto al mismo nivel */
+div.quarto-about-trestles .about-entity,
+div.quarto-about-trestles .about-contents {
+  padding-top: 1rem !important;
+}
+
+/* Banner superior centrado del mismo color que el navbar */
+.about-banner {
+  background-color: #1b365d;
+  color: #ffffff;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 0.65rem 1.25rem;
+  border-radius: 6px;
+  margin-top: 0 !important;
+  margin-bottom: 1.25rem;
+}
+
+.about-banner p {
+  text-align: center !important;
+  margin: 0 !important;
+}
+
+body.quarto-dark .about-banner {
+  background-color: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* ==========================================================================
+   5. PÁGINA DE CV (FECHA, BOTÓN DE DESCARGA Y VISOR PDF)
+   ========================================================================== */
+.cv-meta {
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+
+.cv-meta .cv-date {
+  text-transform: none;
+  letter-spacing: normal;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--bs-body-color);
+}
+
+.cv-download-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.75rem;
+}
+
+.btn-cv {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #1b365d;
+  color: #ffffff !important;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.65rem 1.4rem;
+  border-radius: 8px;
+  border: none;
+  text-decoration: none !important;
+  box-shadow: 0 2px 6px rgba(27, 54, 93, 0.25);
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-cv:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(29, 78, 216, 0.3);
+}
+
+body.quarto-dark .btn-cv {
+  background-color: #2563eb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+body.quarto-dark .btn-cv:hover {
+  background-color: #3b82f6;
+}
+
+.cv-pdf-container {
+  width: 100%;
+  height: 82vh;
+  min-height: 750px;
+  border: 1px solid rgba(128, 128, 128, 0.25);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.cv-pdf-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
