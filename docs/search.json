@@ -1,10 +1,24 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
+    "objectID": "es/index.html",
+    "href": "es/index.html",
     "title": "Marius Bulat Simon",
     "section": "",
-    "text": "Hello!\n\nI’m Marius Bulat Simon. On this website, you can explore my background and check out my personal project portfolio.\nI specialize in financial data analysis, turning complex business needs into pragmatic, working solutions.\nAlthough I mainly code in Python, I also use R and the tidyverse, as it was the first programming language I learned. For example, this very website you’re looking at was built in R and Quarto."
+    "text": "Hola!\n\nSoy Marius Bulat Simon. En esta web, podrás seguir mi trayectoria profesional y ver mi portfolio personal de proyectos.\nMe especializo en el análisis de datos financieros y en diseñar soluciones pragmáticas, funcionales y útiles estudiando necesidades de negocio.\nAunque programo sobre todo con Python, también uso R y el tidyverse, porque fue el primer lenguaje de programación que aprendí. Por ejemplo, esta misma web que ves está hecha en R y Quarto."
+  },
+  {
+    "objectID": "cv/index.html",
+    "href": "cv/index.html",
+    "title": "Marius Bulat Simon",
+    "section": "",
+    "text": "CV LAST UPDATED\nNovember 26, 2026\n\n\n    Download CV"
+  },
+  {
+    "objectID": "es/cv/index.html",
+    "href": "es/cv/index.html",
+    "title": "Marius Bulat Simon",
+    "section": "",
+    "text": "CV: ÚLTIMA ACTUALIZACIÓN\nNovember 26, 2026\n\n\n    Download CV"
   },
   {
     "objectID": "es/portfolio/index.html",
@@ -14,25 +28,11 @@
     "text": "Multi-Currency Treasury Reconciliation & P&L"
   },
   {
-    "objectID": "es/cv/index.html",
-    "href": "es/cv/index.html",
+    "objectID": "index.html",
+    "href": "index.html",
     "title": "Marius Bulat Simon",
     "section": "",
-    "text": "CV: ÚLTIMA ACTUALIZACIÓN\nNovember 24, 2026\n\n\n    Download CV"
-  },
-  {
-    "objectID": "cv/index.html",
-    "href": "cv/index.html",
-    "title": "Marius Bulat Simon",
-    "section": "",
-    "text": "CV LAST UPDATED\nNovember 24, 2026\n\n\n    Download CV"
-  },
-  {
-    "objectID": "es/index.html",
-    "href": "es/index.html",
-    "title": "Marius Bulat Simon",
-    "section": "",
-    "text": "Hola!\n\nSoy Marius Bulat Simon. En esta web, podrás seguir mi trayectoria profesional y ver mi portfolio personal de proyectos.\nMe especializo en el análisis de datos financieros y en diseñar soluciones pragmáticas, funcionales y útiles estudiando necesidades de negocio.\nAunque programo sobre todo con Python, también uso R y el tidyverse, porque fue el primer lenguaje de programación que aprendí. Por ejemplo, esta misma web que ves está hecha en R y Quarto."
+    "text": "Hello!\n\nI’m Marius Bulat Simon. On this website, you can explore my background and check out my personal project portfolio.\nI specialize in financial data analysis, turning complex business needs into pragmatic, working solutions.\nAlthough I mainly code in Python, I also use R and the tidyverse, as it was the first programming language I learned. For example, this very website you’re looking at was built in R and Quarto."
   },
   {
     "objectID": "portfolio/index.html",
