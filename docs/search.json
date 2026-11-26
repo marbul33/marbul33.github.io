@@ -1,10 +1,10 @@
 [
   {
-    "objectID": "es/index.html",
-    "href": "es/index.html",
+    "objectID": "es/cv/index.html",
+    "href": "es/cv/index.html",
     "title": "Marius Bulat Simon",
     "section": "",
-    "text": "Hola!\n\nSoy Marius Bulat Simon. En esta web, podrás seguir mi trayectoria profesional y ver mi portfolio personal de proyectos.\nMe especializo en el análisis de datos financieros y en diseñar soluciones pragmáticas, funcionales y útiles estudiando necesidades de negocio.\nAunque programo sobre todo con Python, también uso R y el tidyverse, porque fue el primer lenguaje de programación que aprendí. Por ejemplo, esta misma web que ves está hecha en R y Quarto."
+    "text": "CV: ÚLTIMA ACTUALIZACIÓN\nNovember 26, 2026\n\n\n    Download CV"
   },
   {
     "objectID": "cv/index.html",
@@ -14,18 +14,18 @@
     "text": "CV LAST UPDATED\nNovember 26, 2026\n\n\n    Download CV"
   },
   {
-    "objectID": "es/cv/index.html",
-    "href": "es/cv/index.html",
+    "objectID": "es/index.html",
+    "href": "es/index.html",
     "title": "Marius Bulat Simon",
     "section": "",
-    "text": "CV: ÚLTIMA ACTUALIZACIÓN\nNovember 26, 2026\n\n\n    Download CV"
+    "text": "Hola!\n\nSoy Marius Bulat Simon. En esta web, podrás seguir mi trayectoria profesional y ver mi portfolio personal de proyectos.\nMe especializo en el análisis de datos financieros y en diseñar soluciones pragmáticas, funcionales y útiles estudiando necesidades de negocio.\nAunque programo sobre todo con Python, también uso R y el tidyverse, porque fue el primer lenguaje de programación que aprendí. Por ejemplo, esta misma web que ves está hecha en R y Quarto."
   },
   {
     "objectID": "es/portfolio/index.html",
     "href": "es/portfolio/index.html",
     "title": "Portfolio",
     "section": "",
-    "text": "Multi-Currency Treasury Reconciliation & P&L"
+    "text": "Multi-Currency Treasury Reconciliation & P&L\nAbaco"
   },
   {
     "objectID": "index.html",
@@ -39,6 +39,6 @@
     "href": "portfolio/index.html",
     "title": "Portfolio",
     "section": "",
-    "text": "Multi-Currency Treasury Reconciliation & P&L"
+    "text": "Multi-Currency Treasury Reconciliation & P&L\nAbaco"
   }
 ]
