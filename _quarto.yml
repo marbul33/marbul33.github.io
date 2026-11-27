@@ -28,6 +28,7 @@ website:
 
 format:
   html:
+    pagetitle: "Marius Bulat Simon"
     theme:
       light: [default, ./styles/light.scss]
       dark: [default, ./styles/dark.scss]
