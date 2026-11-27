@@ -1,5 +1,5 @@
 ---
-pagetitle: "Abaco — Cash & Vault Reconciliation"
+pagetitle: ""
 page-layout: custom
 ---
 

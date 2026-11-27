@@ -1,5 +1,5 @@
 /* ==========================================================================
-   1. INTERRUPTOR DE TEMA (SOL / LUNA)
+1. INTERRUPTOR DE TEMA (SOL / LUNA)
    ========================================================================== */
 .navbar .quarto-color-scheme-toggle {
   display: inline-flex !important;
@@ -30,7 +30,7 @@ body.quarto-dark .navbar .quarto-color-scheme-toggle::before {
 }
 
 /* ==========================================================================
-   2. SELECTOR DE IDIOMA (BANDERA CIRCULAR + CORTINILLA)
+2. SELECTOR DE IDIOMA (BANDERA CIRCULAR + CORTINILLA)
    ========================================================================== */
 .lang-switcher {
   position: relative;
@@ -91,7 +91,7 @@ body.quarto-dark .navbar .quarto-color-scheme-toggle::before {
 }
 
 /* ==========================================================================
-   3. ORDEN Y SEPARACIÓN DEL NAVBAR (ESCRITORIO)
+3. ORDEN Y SEPARACIÓN DEL NAVBAR (ESCRITORIO)
    ========================================================================== */
 @media (min-width: 992px) {
   .navbar #navbarCollapse {
@@ -131,7 +131,7 @@ body.quarto-dark .navbar .quarto-color-scheme-toggle::before {
 }
 
 /* ==========================================================================
-   4. TIPOGRAFÍA Y DISEÑO DE PÁGINA (ABOUT / TEXTOS)
+4. TIPOGRAFÍA Y DISEÑO DE PÁGINA (ABOUT / TEXTOS)
    ========================================================================== */
 main p, main li {
   text-align: justify;
@@ -173,7 +173,7 @@ body.quarto-dark .about-banner {
 }
 
 /* ==========================================================================
-   5. PÁGINA DE CV (FECHA, BOTÓN DE DESCARGA Y VISOR PDF)
+5. PÁGINA DE CV (FECHA, BOTÓN DE DESCARGA Y VISOR PDF)
    ========================================================================== */
 .cv-meta {
   font-size: 0.78rem;
@@ -244,4 +244,219 @@ body.quarto-dark .btn-cv:hover {
   width: 100%;
   height: 100%;
   border: none;
+}
+
+/* ==========================================================================
+6. PORTFOLIO (PROJECT CARDS + READ MORE)
+   ========================================================================== */
+.portfolio-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.portfolio-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 1.5rem;
+  padding: 1.25rem;
+  border: 1px solid rgba(128, 128, 128, 0.25);
+  border-radius: 8px;
+  background-color: var(--bs-body-bg);
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease, padding 0.22s ease;
+}
+
+.portfolio-card:hover {
+  border-color: rgba(27, 54, 93, 0.5);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
+}
+
+/* Expanded state */
+.portfolio-card.is-expanded {
+  z-index: 10;
+  transform: scale(1.02);
+  padding: 1.5rem;
+  border-color: #1b365d;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
+}
+
+body.quarto-dark .portfolio-card {
+  background-color: #1e2022;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+body.quarto-dark .portfolio-card:hover {
+  border-color: rgba(96, 165, 250, 0.5);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+body.quarto-dark .portfolio-card.is-expanded {
+  border-color: #60a5fa;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.55);
+}
+
+/* Thumbnail container (16:10 aspect ratio) */
+.portfolio-thumb-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  align-self: start;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(128, 128, 128, 0.4);
+  background-color: rgba(128, 128, 128, 0.08);
+}
+
+.portfolio-thumb-wrap p {
+  margin: 0 !important;
+  width: 100%;
+  height: 100%;
+}
+
+.portfolio-thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: 0.85rem;
+  color: #6b7280 !important;
+  text-decoration: none !important;
+}
+
+.portfolio-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Text content */
+.portfolio-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.portfolio-body h3 {
+  margin-top: 0 !important;
+  margin-bottom: 0.5rem;
+  padding-right: 6.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Hide the blue anchor link icon on project titles */
+.portfolio-body h3 .anchorjs-link {
+  display: none !important;
+}
+
+/* GitHub repository link in the top-right corner */
+.portfolio-gh-link {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  z-index:2;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #4b5563;
+  text-decoration: none !important;
+  padding: 0.25rem 0.55rem;
+  border: 1px solid rgba(128, 128, 128, 0.3);
+  border-radius: 6px;
+  transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.portfolio-gh-link:hover {
+  color: #111827;
+  border-color: rgba(128, 128, 128, 0.6);
+  background-color: rgba(128, 128, 128, 0.08);
+}
+
+.portfolio-card.is-expanded .portfolio-gh-link {
+  top: 1.5rem;
+  right: 1.5rem;
+}
+
+body.quarto-dark .portfolio-gh-link {
+  color: #9ca3af;
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+body.quarto-dark .portfolio-gh-link:hover {
+  color: #f3f4f6;
+  border-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.portfolio-body p {
+  margin-bottom: 0.6rem;
+  text-align: left;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.portfolio-body p:last-of-type {
+  margin-bottom: 0;
+}
+
+/* Clamp to 3 lines when collapsed (hide extra paragraphs/lists) */
+.portfolio-card:not(.is-expanded) .portfolio-body p:first-of-type {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+.portfolio-card:not(.is-expanded) .portfolio-body p:not(:first-of-type),
+.portfolio-card:not(.is-expanded) .portfolio-body ul,
+.portfolio-card:not(.is-expanded) .portfolio-body ol {
+  display: none;
+}
+
+/* Read more / Show less toggle (bottom-right) */
+.portfolio-toggle-btn {
+  align-self: flex-end;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 0.65rem;
+  padding: 0.15rem 0.35rem;
+  border: none;
+  background: transparent;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1d4ed8;
+  cursor: pointer;
+  transition: color 0.15s ease, opacity 0.15s ease;
+}
+
+.portfolio-toggle-btn:hover {
+  color: #1e3a8a;
+  text-decoration: underline;
+}
+
+body.quarto-dark .portfolio-toggle-btn {
+  color: #60a5fa;
+}
+
+body.quarto-dark .portfolio-toggle-btn:hover {
+  color: #93c5fd;
+}
+
+/* Mobile: stack thumbnail above text */
+@media (max-width: 768px) {
+  .portfolio-card {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .portfolio-card.is-expanded {
+    transform: scale(1.01);
+  }
 }

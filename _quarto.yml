@@ -121,5 +121,71 @@ format:
                 if (esHref) contentLink.href = esHref;
               });
             }
+
+            // 4. Show more / Show less toggle for Portfolio cards
+            const portfolioCards = document.querySelectorAll('.portfolio-card');
+            if (portfolioCards.length > 0) {
+              const labelMore = isSpanish ? 'Ver más' : 'Show more';
+              const labelLess = isSpanish ? 'Ver menos' : 'Show less';
+
+              function setCardExpanded(card, expand) {
+                const btn = card.querySelector('.portfolio-toggle-btn');
+                card.classList.toggle('is-expanded', expand);
+                if (btn) {
+                  btn.setAttribute('aria-expanded', String(expand));
+                  btn.innerHTML = expand
+                    ? labelLess + ' <i class="bi bi-chevron-up"></i>'
+                    : labelMore + ' <i class="bi bi-chevron-down"></i>';
+                }
+              }
+
+              function collapseAll(exceptCard) {
+                portfolioCards.forEach(function(c) {
+                  if (c !== exceptCard && c.classList.contains('is-expanded')) {
+                    setCardExpanded(c, false);
+                  }
+                });
+              }
+
+              portfolioCards.forEach(function(card) {
+                const body = card.querySelector('.portfolio-body');
+                if (!body) return;
+
+                // Only inject button if content overflows 3 lines or has extra blocks
+                const firstP = body.querySelector('p');
+                const isClamped = firstP ? (firstP.scrollHeight > firstP.clientHeight + 1) : false;
+                const hasExtraBlocks = body.querySelectorAll(':scope > p:not(:first-of-type), :scope > ul, :scope > ol').length > 0;
+
+                if (!isClamped && !hasExtraBlocks) return;
+
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'portfolio-toggle-btn';
+                btn.setAttribute('aria-expanded', 'false');
+                btn.innerHTML = labelMore + ' <i class="bi bi-chevron-down"></i>';
+
+                btn.addEventListener('click', function(e) {
+                  e.stopPropagation();
+                  const willExpand = !card.classList.contains('is-expanded');
+                  collapseAll(card);
+                  setCardExpanded(card, willExpand);
+                });
+
+                body.appendChild(btn);
+              });
+
+              // Collapse when clicking outside the active card
+              document.addEventListener('click', function(e) {
+                const active = document.querySelector('.portfolio-card.is-expanded');
+                if (active && !active.contains(e.target)) {
+                  setCardExpanded(active, false);
+                }
+              });
+
+              // Collapse on Escape key
+              document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') collapseAll(null);
+              });
+            }
           });
         </script>

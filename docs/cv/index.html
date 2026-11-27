@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-11-26">
+<meta name="dcterms.date" content="2026-11-28">
 
 <title>index – Marius Bulat Simon</title>
 <style>
@@ -308,7 +308,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">November 26, 2026</p>
+      <p class="date">November 28, 2026</p>
     </div>
   </div>
   
@@ -322,7 +322,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="cv-meta">
 <p>CV LAST UPDATED<br>
-<span class="cv-date">November 26, 2026</span></p>
+<span class="cv-date">November 28, 2026</span></p>
 </div>
 <div class="cv-download-wrap">
 <p><a href="CV_EN_Bulat_Simon_Marius.pdf" class="btn btn-cv" download="CV_EN_Bulat_Simon_Marius.pdf"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewbox="0 0 16 16" aria-hidden="true"> <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1m-1 4v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 11.293V7.5a.5.5 0 0 1 1 0"></path> </svg> Download CV </a></p>
@@ -944,6 +944,72 @@ ul.task-list li input[type="checkbox"] {
       document.querySelectorAll('main a[href]').forEach(function(contentLink) {
         const esHref = toSpanishUrl(contentLink.getAttribute('href'));
         if (esHref) contentLink.href = esHref;
+      });
+    }
+
+    // 4. Show more / Show less toggle for Portfolio cards
+    const portfolioCards = document.querySelectorAll('.portfolio-card');
+    if (portfolioCards.length > 0) {
+      const labelMore = isSpanish ? 'Ver más' : 'Show more';
+      const labelLess = isSpanish ? 'Ver menos' : 'Show less';
+
+      function setCardExpanded(card, expand) {
+        const btn = card.querySelector('.portfolio-toggle-btn');
+        card.classList.toggle('is-expanded', expand);
+        if (btn) {
+          btn.setAttribute('aria-expanded', String(expand));
+          btn.innerHTML = expand
+            ? labelLess + ' <i class="bi bi-chevron-up"></i>'
+            : labelMore + ' <i class="bi bi-chevron-down"></i>';
+        }
+      }
+
+      function collapseAll(exceptCard) {
+        portfolioCards.forEach(function(c) {
+          if (c !== exceptCard && c.classList.contains('is-expanded')) {
+            setCardExpanded(c, false);
+          }
+        });
+      }
+
+      portfolioCards.forEach(function(card) {
+        const body = card.querySelector('.portfolio-body');
+        if (!body) return;
+
+        // Only inject button if content overflows 3 lines or has extra blocks
+        const firstP = body.querySelector('p');
+        const isClamped = firstP ? (firstP.scrollHeight > firstP.clientHeight + 1) : false;
+        const hasExtraBlocks = body.querySelectorAll(':scope > p:not(:first-of-type), :scope > ul, :scope > ol').length > 0;
+
+        if (!isClamped && !hasExtraBlocks) return;
+
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'portfolio-toggle-btn';
+        btn.setAttribute('aria-expanded', 'false');
+        btn.innerHTML = labelMore + ' <i class="bi bi-chevron-down"></i>';
+
+        btn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const willExpand = !card.classList.contains('is-expanded');
+          collapseAll(card);
+          setCardExpanded(card, willExpand);
+        });
+
+        body.appendChild(btn);
+      });
+
+      // Collapse when clicking outside the active card
+      document.addEventListener('click', function(e) {
+        const active = document.querySelector('.portfolio-card.is-expanded');
+        if (active && !active.contains(e.target)) {
+          setCardExpanded(active, false);
+        }
+      });
+
+      // Collapse on Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') collapseAll(null);
       });
     }
   });

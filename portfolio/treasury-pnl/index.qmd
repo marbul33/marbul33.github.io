@@ -1,10 +1,10 @@
 ---
-pagetitle: "Multi-Currency Treasury Reconciliation & P&L"
+pagetitle: ""
 page-layout: custom
 ---
 
 <iframe id="proj" src="https://marbul33.github.io/treasury-pnl-reconciliation/"
-        title="Treasury P&L dashboard" loading="lazy"></iframe>
+        title="Abaco Cash Management Demo" loading="lazy"></iframe>
 
 <style>
 html, body {
@@ -15,7 +15,7 @@ html, body {
 
 #proj {
   position: fixed !important;
-  top: 58px !important; /* Justo debajo de tu navbar azul */
+  top: 58px !important;
   left: 0 !important;
   right: 0 !important;
   bottom: 0 !important;

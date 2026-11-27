@@ -1,0 +1,45 @@
+---
+pagetitle: ""
+page-layout: custom
+editor: source
+---
+
+```{=html}
+<style>
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+
+  #quarto-header {
+    margin-bottom: 0 !important;
+  }
+
+  #quarto-content, main.content {
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  footer.footer {
+    display: none !important;
+  }
+
+  #proj {
+    display: block;
+    width: 100%;
+    margin-top: 58px;
+    height: calc(100vh - 58px);
+    border: none;
+  }
+</style>
+
+<iframe
+  id="proj"
+  src="https://marbul33.github.io/trabajo_BigData/mapa_riesgos.html"
+  title="Risk Map: Valencian Community"
+  allowfullscreen>
+</iframe>
+```
