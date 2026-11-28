@@ -1,7 +1,8 @@
 ---
 title: ""
+lang: es
 date: today
-date-format: "MMMM D, YYYY"
+date-format: "D [de] MMMM [de] YYYY"
 ---
 
 ::: {.cv-meta}
