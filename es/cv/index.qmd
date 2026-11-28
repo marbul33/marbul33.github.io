@@ -21,4 +21,5 @@ CV: ÚLTIMA ACTUALIZACIÓN
 
 ::: {.cv-pdf-container}
 <iframe src="../../cv/CV_ES_Bulat_Simon_Marius.pdf#view=FitH" title="Curriculum Vitae"></iframe>
+
 :::
