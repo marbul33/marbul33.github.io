@@ -12,6 +12,30 @@
 
   const SITE_TITLE = "Marius Bulat Simon";
   const ASSET_EXT_REGEX = /\.(pdf|png|jpe?g|svg|gif|webp|zip|csv|xlsx?)$/i;
+  // Endpoint privado del contador (Cloudflare Worker). Dejar vacío para desactivar.
+  const PULSE_ENDPOINT = "https://mbs-pulse.mariusbulat33.workers.dev/p";
+
+  // Envía un ping silencioso en segundo plano (sin cookies ni impacto en rendimiento)
+  function sendPulse() {
+    if (!PULSE_ENDPOINT) return;
+    const host = window.location.hostname;
+    if (!host || host === "localhost" || host === "127.0.0.1" || window.location.protocol === "file:") {
+      return;
+    }
+    try {
+      const body = JSON.stringify({ p: window.location.pathname, r: document.referrer || "" });
+      if (navigator.sendBeacon) {
+        navigator.sendBeacon(PULSE_ENDPOINT, new Blob([body], { type: "text/plain" }));
+      } else {
+        fetch(PULSE_ENDPOINT, {
+          method: "POST",
+          body: body,
+          headers: { "Content-Type": "text/plain" },
+          keepalive: true,
+        }).catch(function () {});
+      }
+    } catch (_) {}
+  }
 
   // Asegura el título fijo desde la carga inicial
   document.title = SITE_TITLE;
@@ -200,5 +224,11 @@
     document.addEventListener("DOMContentLoaded", initSite);
   } else {
     initSite();
+  }
+
+  if (typeof window.requestIdleCallback === "function") {
+    window.requestIdleCallback(sendPulse, { timeout: 2000 });
+  } else {
+    setTimeout(sendPulse, 0);
   }
 })();

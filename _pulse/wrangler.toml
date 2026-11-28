@@ -1,0 +1,14 @@
+name = "mbs-pulse"
+main = "src/index.js"
+compatibility_date = "2025-01-01"
+
+[vars]
+# Lista separada por comas de dominios autorizados a enviar visitas.
+# Si en el futuro añades un dominio propio, solo agrégalo aquí:
+# ALLOWED_ORIGINS = "https://marbul33.github.io,https://tudominio.com"
+ALLOWED_ORIGINS = "https://marbul33.github.io"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "mbs-pulse-db"
+database_id = "d0c5cfa3-7da3-44ad-a623-c6957ad4536f"
