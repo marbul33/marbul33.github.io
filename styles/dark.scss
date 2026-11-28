@@ -1,13 +1,16 @@
 /*-- scss:defaults --*/
+// Superficies y texto base
 $body-bg: #16181a;
 $body-color: #e4e6eb;
-$link-color: #60a5fa;
-$navbar-bg: #111827;
-$navbar-fg: #f3f4f6;
 $card-bg: #1e2022;
 
-$link-color: #60a5fa;       // Azul claro luminoso
-$link-hover-color: #93c5fd; // Un poco más brillante al pasar el ratón
+// Barra de navegación
+$navbar-bg: #111827;
+$navbar-fg: #f3f4f6;
+
+// Enlaces
+$link-color: #60a5fa;
+$link-hover-color: #93c5fd;
 $link-decoration: none;
 $link-hover-decoration: underline;
 

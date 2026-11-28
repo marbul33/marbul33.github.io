@@ -2,9 +2,6 @@
 title: ""
 date: today
 date-format: "MMMM D, YYYY"
-toc: false
-header-includes: |
-  <style>#title-block-header { display: none; }</style>
 ---
 
 ::: {.cv-meta}

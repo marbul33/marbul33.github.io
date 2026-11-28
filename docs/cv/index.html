@@ -46,7 +46,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-b99a7bf920b2e6ba9c2184432af07288.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-b200d9ee00706b12f4b004d092cdd14c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-dark-f9417530b1e9ba74f594d7220451d388.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../site_libs/bootstrap/bootstrap-b99a7bf920b2e6ba9c2184432af07288.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
@@ -63,7 +63,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<style>#title-block-header { display: none; }</style>
+<script src="../scripts/main.js" defer=""></script>
 
 
 <link rel="stylesheet" href="../styles/style.css">
@@ -860,160 +860,6 @@ ul.task-list li input[type="checkbox"] {
   window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
   </script>
 </div> <!-- /content -->
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const path = window.location.pathname;
-    const esMatch = path.match(/^(.*)\/es(\/.*|$)/);
-    const isSpanish = Boolean(esMatch);
-
-    // Raíz del sitio calculada directamente desde /es/ (o desde navbar-brand en inglés)
-    const brand = document.querySelector('.navbar-brand');
-    const brandHref = brand ? brand.getAttribute('href') : null;
-    const siteRoot = isSpanish
-      ? (esMatch[1] + '/')
-      : ((brandHref && !brandHref.startsWith('#'))
-          ? new URL(brandHref, window.location.href).pathname.replace(/index\.html$/, '')
-          : '/');
-
-    // Convierte cualquier enlace interno a su versión en /es/
-    function toSpanishUrl(rawHref) {
-      if (!rawHref || rawHref.startsWith('#') || rawHref.startsWith('mailto:') || rawHref.startsWith('javascript:')) {
-        return null;
-      }
-      const url = new URL(rawHref, window.location.href);
-      if (url.origin !== window.location.origin) return null;
-      if (/\.(pdf|png|jpe?g|svg|gif|webp|zip|csv|xlsx?)$/i.test(url.pathname)) return null;
-      if (/\/es(\/|$)/.test(url.pathname)) return null;
-
-      if (url.pathname.startsWith(siteRoot)) {
-        const rel = url.pathname.slice(siteRoot.length);
-        return siteRoot + 'es/' + rel + url.search + url.hash;
-      }
-      return null;
-    }
-
-    // 1. Enlaces externos en pestaña nueva
-    document.querySelectorAll('a[href^="http"]').forEach(function(link) {
-      if (link.hostname !== window.location.hostname) {
-        link.setAttribute('target', '_blank');
-        link.setAttribute('rel', 'noopener noreferrer');
-      }
-    });
-
-    // 2. Interruptor único de idioma (bandera actual + destino inteligente + animación)
-    const switcher = document.querySelector('.lang-switcher');
-    if (switcher) {
-      const link = switcher.closest('a');
-      if (isSpanish) {
-        switcher.classList.add('is-es');
-        switcher.setAttribute('title', 'Switch to English');
-        const subPath = (esMatch[2] || '/').replace(/^\//, '');
-        let enPath = siteRoot + subPath;
-        if (enPath.endsWith('/')) enPath += 'index.html';
-        link.href = enPath;
-      } else {
-        switcher.setAttribute('title', 'Cambiar a Español');
-        let relPath = path.startsWith(siteRoot) ? path.slice(siteRoot.length) : path.replace(/^\//, '');
-        if (!relPath || relPath.endsWith('/')) relPath += 'index.html';
-        link.href = siteRoot + 'es/' + relPath;
-      }
-
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        switcher.classList.add('is-switching');
-        setTimeout(function() {
-          window.location.href = link.href;
-        }, 280);
-      });
-    }
-
-    // 3. Mantener /es/ en título, menú superior y enlaces internos
-    if (isSpanish) {
-      if (brand && brandHref) {
-        const brandEs = toSpanishUrl(brandHref);
-        if (brandEs) brand.href = brandEs;
-      }
-
-      document.querySelectorAll('.navbar-nav .nav-link, .navbar-nav .dropdown-item').forEach(function(navLink) {
-        if (navLink.querySelector('.lang-switcher')) return;
-
-        const esHref = toSpanishUrl(navLink.getAttribute('href'));
-        if (esHref) navLink.href = esHref;
-      });
-
-      document.querySelectorAll('main a[href]').forEach(function(contentLink) {
-        const esHref = toSpanishUrl(contentLink.getAttribute('href'));
-        if (esHref) contentLink.href = esHref;
-      });
-    }
-
-    // 4. Show more / Show less toggle for Portfolio cards
-    const portfolioCards = document.querySelectorAll('.portfolio-card');
-    if (portfolioCards.length > 0) {
-      const labelMore = isSpanish ? 'Ver más' : 'Show more';
-      const labelLess = isSpanish ? 'Ver menos' : 'Show less';
-
-      function setCardExpanded(card, expand) {
-        const btn = card.querySelector('.portfolio-toggle-btn');
-        card.classList.toggle('is-expanded', expand);
-        if (btn) {
-          btn.setAttribute('aria-expanded', String(expand));
-          btn.innerHTML = expand
-            ? labelLess + ' <i class="bi bi-chevron-up"></i>'
-            : labelMore + ' <i class="bi bi-chevron-down"></i>';
-        }
-      }
-
-      function collapseAll(exceptCard) {
-        portfolioCards.forEach(function(c) {
-          if (c !== exceptCard && c.classList.contains('is-expanded')) {
-            setCardExpanded(c, false);
-          }
-        });
-      }
-
-      portfolioCards.forEach(function(card) {
-        const body = card.querySelector('.portfolio-body');
-        if (!body) return;
-
-        // Only inject button if content overflows 3 lines or has extra blocks
-        const firstP = body.querySelector('p');
-        const isClamped = firstP ? (firstP.scrollHeight > firstP.clientHeight + 1) : false;
-        const hasExtraBlocks = body.querySelectorAll(':scope > p:not(:first-of-type), :scope > ul, :scope > ol').length > 0;
-
-        if (!isClamped && !hasExtraBlocks) return;
-
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'portfolio-toggle-btn';
-        btn.setAttribute('aria-expanded', 'false');
-        btn.innerHTML = labelMore + ' <i class="bi bi-chevron-down"></i>';
-
-        btn.addEventListener('click', function(e) {
-          e.stopPropagation();
-          const willExpand = !card.classList.contains('is-expanded');
-          collapseAll(card);
-          setCardExpanded(card, willExpand);
-        });
-
-        body.appendChild(btn);
-      });
-
-      // Collapse when clicking outside the active card
-      document.addEventListener('click', function(e) {
-        const active = document.querySelector('.portfolio-card.is-expanded');
-        if (active && !active.contains(e.target)) {
-          setCardExpanded(active, false);
-        }
-      });
-
-      // Collapse on Escape key
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') collapseAll(null);
-      });
-    }
-  });
-</script>
 
 
 

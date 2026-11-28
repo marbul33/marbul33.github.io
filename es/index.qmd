@@ -9,13 +9,8 @@ about:
 Hola!
 :::
 
-Soy **Marius Bulat Simon**. En esta web, podrás seguir mi trayectoria profesional y ver mi
-portfolio personal de proyectos.
+Soy **Marius Bulat Simon**. En esta web, podrás seguir mi trayectoria profesional y ver mi portfolio personal de proyectos.
 
 Me especializo en el análisis de datos financieros y en diseñar soluciones pragmáticas, funcionales y útiles estudiando necesidades de negocio.
 
-Aunque programo sobre todo con [**Python**](https://www.python.org/), también uso [**R**](https://www.r-project.org/) y el [**tidyverse**](https://tidyverse.org/), porque fue el primer
-lenguaje de programación que aprendí. Por ejemplo, esta misma web que ves está hecha en R y
-[**Quarto**](https://quarto.org/).
-
-
+Aunque programo sobre todo con [**Python**](https://www.python.org/), también uso [**R**](https://www.r-project.org/) y el [**tidyverse**](https://tidyverse.org/), porque fue el primer lenguaje de programación que aprendí. Por ejemplo, esta misma web que ves está hecha en R y [**Quarto**](https://quarto.org/).

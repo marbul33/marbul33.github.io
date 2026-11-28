@@ -1,5 +1,17 @@
 /* ==========================================================================
-1. INTERRUPTOR DE TEMA (SOL / LUNA)
+   VARIABLES GLOBALES
+   ========================================================================== */
+:root {
+  --navbar-height: 58px;
+  --brand-navy: #1b365d;
+  --brand-blue: #1d4ed8;
+  --brand-blue-dark: #1e3a8a;
+  --accent-blue-light: #60a5fa;
+  --accent-blue-lighter: #93c5fd;
+}
+
+/* ==========================================================================
+   1. INTERRUPTOR DE TEMA (SOL / LUNA)
    ========================================================================== */
 .navbar .quarto-color-scheme-toggle {
   display: inline-flex !important;
@@ -30,7 +42,7 @@ body.quarto-dark .navbar .quarto-color-scheme-toggle::before {
 }
 
 /* ==========================================================================
-2. SELECTOR DE IDIOMA (BANDERA CIRCULAR + CORTINILLA)
+   2. SELECTOR DE IDIOMA (BANDERA CIRCULAR + CORTINILLA DIAGONAL)
    ========================================================================== */
 .lang-switcher {
   position: relative;
@@ -58,7 +70,7 @@ body.quarto-dark .navbar .quarto-color-scheme-toggle::before {
   transition: clip-path 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Estado por defecto (Inglés visible, España oculta) */
+/* Estado por defecto (Inglés visible, Español en cortinilla) */
 .lang-switcher .flag-en { z-index: 1; }
 .lang-switcher .flag-es {
   z-index: 2;
@@ -81,7 +93,7 @@ body.quarto-dark .navbar .quarto-color-scheme-toggle::before {
   clip-path: polygon(55% 0, 100% 0, 100% 100%, 35% 100%);
 }
 
-/* Cierre completo de la animación al hacer clic */
+/* Cierre completo de la cortinilla al hacer clic */
 .lang-switcher.is-switching .flag-es,
 .lang-switcher.is-es.is-switching .flag-en {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%) !important;
@@ -91,7 +103,10 @@ body.quarto-dark .navbar .quarto-color-scheme-toggle::before {
 }
 
 /* ==========================================================================
-3. ORDEN Y SEPARACIÓN DEL NAVBAR (ESCRITORIO)
+   3. ORDEN Y SEPARACIÓN DEL NAVBAR (ESCRITORIO >= 992px)
+   Quarto renderiza `.quarto-navbar-tools` fuera de `#navbarCollapse`.
+   Con `display: contents` exponemos las listas como hijos flex directos
+   del contenedor para intercalar el botón de tema junto al de idioma.
    ========================================================================== */
 @media (min-width: 992px) {
   .navbar #navbarCollapse {
@@ -120,7 +135,7 @@ body.quarto-dark .navbar .quarto-color-scheme-toggle::before {
     align-items: center;
   }
 
-  /* Separador vertical entre [tema + idioma] y [GitHub + LinkedIn + futuros enlaces] */
+  /* Separador vertical entre [tema + idioma] y [iconos sociales] */
   .navbar .navbar-nav .nav-item:has(.lang-switcher) {
     margin-right: 14px;
     padding-right: 14px;
@@ -131,9 +146,10 @@ body.quarto-dark .navbar .quarto-color-scheme-toggle::before {
 }
 
 /* ==========================================================================
-4. TIPOGRAFÍA Y DISEÑO DE PÁGINA (ABOUT / TEXTOS)
+   4. TIPOGRAFÍA Y PÁGINA DE INICIO (ABOUT TRESTLES)
    ========================================================================== */
-main p, main li {
+main p,
+main li {
   text-align: justify;
   hyphens: auto;
 }
@@ -142,15 +158,13 @@ div.quarto-about-trestles .about-contents {
   border-left: none !important;
 }
 
-/* Alinea la parte superior de la foto y del bloque de texto al mismo nivel */
 div.quarto-about-trestles .about-entity,
 div.quarto-about-trestles .about-contents {
   padding-top: 1rem !important;
 }
 
-/* Banner superior centrado del mismo color que el navbar */
 .about-banner {
-  background-color: #1b365d;
+  background-color: var(--brand-navy);
   color: #ffffff;
   text-align: center;
   font-size: 1.5rem;
@@ -173,8 +187,13 @@ body.quarto-dark .about-banner {
 }
 
 /* ==========================================================================
-5. PÁGINA DE CV (FECHA, BOTÓN DE DESCARGA Y VISOR PDF)
+   5. PÁGINA DE CV (FECHA, BOTÓN DE DESCARGA Y VISOR PDF)
    ========================================================================== */
+/* Oculta el bloque de fecha automático que Quarto inserta al usar `date: today` */
+body:has(.cv-meta) #title-block-header {
+  display: none !important;
+}
+
 .cv-meta {
   font-size: 0.78rem;
   letter-spacing: 0.06em;
@@ -203,7 +222,7 @@ body.quarto-dark .about-banner {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background-color: #1b365d;
+  background-color: var(--brand-navy);
   color: #ffffff !important;
   font-weight: 600;
   font-size: 1rem;
@@ -216,7 +235,7 @@ body.quarto-dark .about-banner {
 }
 
 .btn-cv:hover {
-  background-color: #1d4ed8;
+  background-color: var(--brand-blue);
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(29, 78, 216, 0.3);
 }
@@ -247,7 +266,7 @@ body.quarto-dark .btn-cv:hover {
 }
 
 /* ==========================================================================
-6. PORTFOLIO (PROJECT CARDS + READ MORE)
+   6. PORTFOLIO (TARJETAS DE PROYECTO Y DESPLEGABLE)
    ========================================================================== */
 .portfolio-list {
   display: flex;
@@ -273,12 +292,11 @@ body.quarto-dark .btn-cv:hover {
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
 }
 
-/* Expanded state */
 .portfolio-card.is-expanded {
   z-index: 10;
   transform: scale(1.02);
   padding: 1.5rem;
-  border-color: #1b365d;
+  border-color: var(--brand-navy);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
 }
 
@@ -293,11 +311,11 @@ body.quarto-dark .portfolio-card:hover {
 }
 
 body.quarto-dark .portfolio-card.is-expanded {
-  border-color: #60a5fa;
+  border-color: var(--accent-blue-light);
   box-shadow: 0 14px 36px rgba(0, 0, 0, 0.55);
 }
 
-/* Thumbnail container (16:10 aspect ratio) */
+/* Miniatura con relación de aspecto 16:10 fija (evita saltos de layout CLS) */
 .portfolio-thumb-wrap {
   width: 100%;
   aspect-ratio: 16 / 10;
@@ -332,7 +350,7 @@ body.quarto-dark .portfolio-card.is-expanded {
   display: block;
 }
 
-/* Text content */
+/* Contenido textual de la tarjeta */
 .portfolio-body {
   display: flex;
   flex-direction: column;
@@ -347,17 +365,18 @@ body.quarto-dark .portfolio-card.is-expanded {
   font-weight: 600;
 }
 
-/* Hide the blue anchor link icon on project titles */
 .portfolio-body h3 .anchorjs-link {
   display: none !important;
 }
 
-/* GitHub repository link in the top-right corner */
+/* Botón del repositorio GitHub (esquina superior derecha).
+   Inyecta automáticamente los iconos de GitHub y pestaña nueva vía CSS
+   para mantener el Markdown limpio al añadir proyectos. */
 .portfolio-gh-link {
   position: absolute;
   top: 1.25rem;
   right: 1.25rem;
-  z-index:2;
+  z-index: 2;
   display: inline-flex;
   align-items: center;
   gap: 5px;
@@ -369,6 +388,25 @@ body.quarto-dark .portfolio-card.is-expanded {
   border: 1px solid rgba(128, 128, 128, 0.3);
   border-radius: 6px;
   transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.portfolio-gh-link:not(:has(.bi))::before,
+.portfolio-gh-link:not(:has(.bi))::after {
+  display: inline-block;
+  font-family: "bootstrap-icons" !important;
+  font-style: normal;
+  font-weight: normal !important;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.portfolio-gh-link:not(:has(.bi))::before {
+  content: "\f3ed"; /* bi-github */
+}
+
+.portfolio-gh-link:not(:has(.bi))::after {
+  content: "\f1c5"; /* bi-box-arrow-up-right */
 }
 
 .portfolio-gh-link:hover {
@@ -404,7 +442,7 @@ body.quarto-dark .portfolio-gh-link:hover {
   margin-bottom: 0;
 }
 
-/* Clamp to 3 lines when collapsed (hide extra paragraphs/lists) */
+/* Recorte a 3 líneas en estado colapsado */
 .portfolio-card:not(.is-expanded) .portfolio-body p:first-of-type {
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -419,7 +457,7 @@ body.quarto-dark .portfolio-gh-link:hover {
   display: none;
 }
 
-/* Read more / Show less toggle (bottom-right) */
+/* Botón "Show more / Ver más" */
 .portfolio-toggle-btn {
   align-self: flex-end;
   display: inline-flex;
@@ -431,25 +469,24 @@ body.quarto-dark .portfolio-gh-link:hover {
   background: transparent;
   font-size: 0.85rem;
   font-weight: 600;
-  color: #1d4ed8;
+  color: var(--brand-blue);
   cursor: pointer;
   transition: color 0.15s ease, opacity 0.15s ease;
 }
 
 .portfolio-toggle-btn:hover {
-  color: #1e3a8a;
+  color: var(--brand-blue-dark);
   text-decoration: underline;
 }
 
 body.quarto-dark .portfolio-toggle-btn {
-  color: #60a5fa;
+  color: var(--accent-blue-light);
 }
 
 body.quarto-dark .portfolio-toggle-btn:hover {
-  color: #93c5fd;
+  color: var(--accent-blue-lighter);
 }
 
-/* Mobile: stack thumbnail above text */
 @media (max-width: 768px) {
   .portfolio-card {
     grid-template-columns: 1fr;
@@ -459,4 +496,35 @@ body.quarto-dark .portfolio-toggle-btn:hover {
   .portfolio-card.is-expanded {
     transform: scale(1.01);
   }
+}
+
+/* ==========================================================================
+   7. VISOR DE PROYECTOS EMBEBIDOS (IFRAME A PANTALLA COMPLETA)
+   Centraliza el layout de todas las subpáginas del portfolio para evitar
+   repetir bloques <style> en cada archivo .qmd.
+   ========================================================================== */
+html:has(.project-frame),
+body:has(.project-frame) {
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+body:has(.project-frame) footer.footer {
+  display: none !important;
+}
+
+.project-frame {
+  position: fixed;
+  top: var(--navbar-height);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: calc(100vh - var(--navbar-height));
+  height: calc(100dvh - var(--navbar-height));
+  border: 0;
+  margin: 0;
+  padding: 0;
+  z-index: 10;
 }
