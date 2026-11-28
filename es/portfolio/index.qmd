@@ -36,7 +36,7 @@ Este motor multidivisa de conciliación de tesorería y cuenta de resultados (P&
 [![](../../img/abaco.png)](abaco/index.qmd){.portfolio-thumb}
 :::
 ::: {.portfolio-body}
-### [Abaco](abaco/index.qmd) [GitHub](https://github.com/marbul33/abaco){.portfolio-gh-link}
+### [Abaco (Versión Simplificada)](abaco/index.qmd) [GitHub](https://github.com/marbul33/abaco){.portfolio-gh-link}
 
 Abaco es un software de gestión de efectivo que ahorra **5 horas** semanales en comparación con el control manual en papel o Excel. Se desarrolló tras identificar ineficiencias operativas en el día a día durante mi etapa como responsable operativo de oficina en Banco Sabadell. Centraliza todas las operaciones relacionadas con el recuento e inventario de monedas y bolsas de monedas, y mejora además la trazabilidad. Aquí puedes explorar una versión simplificada desarrollada en HTML.
 :::

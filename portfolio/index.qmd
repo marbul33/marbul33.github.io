@@ -36,7 +36,7 @@ This Multi-Currency Treasury Reconciliation & P&L engine automates month-end clo
 [![](../img/abaco.png)](abaco/index.qmd){.portfolio-thumb}
 :::
 ::: {.portfolio-body}
-### [Abaco](abaco/index.qmd) [GitHub](https://github.com/marbul33/abaco){.portfolio-gh-link}
+### [Abaco (Simplified Version)](abaco/index.qmd) [GitHub](https://github.com/marbul33/abaco){.portfolio-gh-link}
 
 Abaco is a cash management software that saves **5 hours** per week compared to manual tracking on paper or Excel. It was developed after identifying day-to-day operational inefficiencies during my time as a Branch Operations Manager at Banco Sabadell. It centralizes all operations related to coin & coin bag counting and inventory. It also enhances traceability. Here, you can explore a simplified version built in HTML.
 :::
